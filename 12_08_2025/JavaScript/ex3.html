@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Length Checker</title>
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Enter some text">
+<button onclick="showLength()">Check Length</button>
+
+<p id="result"></p>
+
+<script>
+    function showLength() {
+        const text = document.getElementById("myInput").value;
+        const length = text.length;
+        document.getElementById("result").innerText = "Length of text: " + length;
+    }
+</script>
+
+</body>
+</html>
