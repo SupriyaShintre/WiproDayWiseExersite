@@ -1,0 +1,122 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+  color-scheme: dark;
+}
+
+/* Background (matches your login style) */
+.register-hero {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(99, 102, 241, 0.12), transparent 60%),
+    radial-gradient(1000px 500px at 90% 90%, rgba(16, 185, 129, 0.12), transparent 60%),
+    linear-gradient(135deg, #0f172a, #111827 60%, #0b1220);
+  position: relative;
+  isolation: isolate;
+}
+
+/* Subtle noise grid mask for depth */
+.register-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 40 40'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 39h40v1H0zM39 0v40h1V0z'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 90%);
+}
+
+/* Glass card */
+.register-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e5e7eb;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  animation: floatIn .5s ease-out;
+}
+
+/* Brand header */
+.brand .logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 0.5rem;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #34d399, #6ee7b7);
+  color: #0b1220;
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
+}
+.brand .title {
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+.brand .subtitle {
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* Inputs */
+.form-control {
+  background: rgba(17, 24, 39, 0.6) !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(148, 163, 184, 0.35) !important;
+  border-radius: 12px !important;
+  padding-top: .85rem !important;
+  padding-bottom: .85rem !important;
+}
+.form-control:focus {
+  background: rgba(17, 24, 39, 0.8) !important;
+  color: #fff !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.15) !important;
+}
+.form-label {
+  color: #a7b0c0;
+}
+
+/* Your original Angular validity borders (kept) */
+input.ng-valid.ng-dirty {
+  border: 2px solid #22c55e !important;
+  border-radius: 12px !important;
+}
+input.ng-invalid.ng-dirty {
+  border: 2px solid #ef4444 !important;
+  border-radius: 12px !important;
+}
+
+/* Register button */
+.register-btn {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 14px 30px rgba(34, 197, 94, 0.25);
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+}
+.register-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(34, 197, 94, 0.32);
+  filter: brightness(1.02);
+}
+.register-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(34, 197, 94, 0.25);
+}
+
+/* Entrance animation */
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.992); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* Optional: background image fallback (commented out your old image) */
+/*
+.register-hero{
+  background: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp') center/cover no-repeat;
+}
+*/
